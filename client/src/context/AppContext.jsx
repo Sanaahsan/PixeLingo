@@ -9,11 +9,11 @@ export const AppContext = createContext()
 const AppContextProvider=(props)=>{
       const [user, setUser] = useState(null);//for login in log out, true so that the right side disappears
 
-      const [showLogin, setShowLogin]=useState(false)//to prevent scrolling without loggin in
+      const [showLogin, setShowLogin]=useState(false)//to prevent scrolling without logging in
 
       const [token,setToken]= useState(localStorage.getItem('token'))
 
-      const [credit, setCredit] = useState(false)
+      const [credit, setCredit] = useState(0)
 
 
       const backendUrl = import.meta.env.VITE_BACKEND_URL
@@ -22,19 +22,19 @@ const AppContextProvider=(props)=>{
 
       const loadCreditsData = async ()=>{
         try{
-          const {data} = await axios.get(backendUrl + 'api/user/credits',{headers: {token}})
+          const {data} = await axios.get(backendUrl + '/api/user/credits',{headers: {token}})
 
           if(data.success){
             setCredit(data.credits)
             setUser(data.user)
-          }
+          } 
 
-        }catch(error){
+        }catch(error){ 
           console.log(error)
           toast.error(error.message)
         }
       }
-
+  
       const generateImage = async(prompt)=>{
            try{
             const {data}=await axios.post(backendUrl + '/api/image/generate-image',{prompt},{headers: {token}})

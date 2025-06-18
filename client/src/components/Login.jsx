@@ -10,11 +10,12 @@ import { toast } from 'react-toastify'
 const Login = () => {
 
     const[state, setState]= useState('Login')
-    const {setShowLogin, backendUrl, setToken, setUser} = useContext(AppContext)
+    const {setShowLogin, backendUrl, setToken, setUser, loadCreditsData} = useContext(AppContext)
 
+    // states for storing user details
     const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('david@gmail.com')
+    const [password, setPassword] = useState('david123')
 
 
     const onSubmitHandler = async (e)=>{
@@ -35,7 +36,7 @@ const Login = () => {
             toast.error(data.message)
            }
         }else{
-          const{data}= await axios.post(backendUrl + '/api/user/register', {name,email, password})
+          const{data}= await axios.post(backendUrl + '/api/user/register', {name, email, password})
 
            if(data.success){
                 setToken(data.token)

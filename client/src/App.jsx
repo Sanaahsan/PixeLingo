@@ -29,7 +29,7 @@ const {showLogin}=useContext(AppContext)
       {/* footer is outside routes so it will be displayed on all the pages */}
       <Footer/>
 
-    
+     
        
     </div>
   )
