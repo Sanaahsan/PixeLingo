@@ -1,10 +1,13 @@
+
 import axios from "axios"
 import userModel from "../models/userModel.js"
 import FormData from 'form-data'
 
-const generateImage = async (req, res)=>{
+// method to generate image using the clipdrop api
+export const generateImage = async (req, res)=>{
     try{
-        const {userId, prompt}=req.body
+        const userId = req.userId
+        const {prompt}=req.body
 
         const user = await userModel.findById(userId)
 
@@ -40,4 +43,4 @@ const generateImage = async (req, res)=>{
     }
 }
 
-export {generateImage}
+// export {generateImage}
