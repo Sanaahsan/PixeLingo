@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import {Routes, Route} from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
 import BuyCredit from './pages/BuyCredit'
@@ -29,7 +29,7 @@ const {showLogin}=useContext(AppContext)
       {/* footer is outside routes so it will be displayed on all the pages */}
       <Footer/>
 
-     
+    
        
     </div>
   )
