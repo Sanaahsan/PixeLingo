@@ -1,9 +1,14 @@
+
 import express from 'express'
-import {generateImage} from '../controllers/imageController.js'
+import {createCheckoutSession, addCredits, verifySession} from '../controllers/userController.js'
 import userAuth from '../middlewares/auth.js'
 
-const imageRouter = express.Router()
+const paymentRouter = express.Router()
 
-imageRouter.post('/generate-image',userAuth, generateImage)
+paymentRouter.post('/create-checkout-session', userAuth, createCheckoutSession)
+paymentRouter.post('/add-credits', userAuth, addCredits)
+paymentRouter.post('/verify-session', verifySession)
 
-export default imageRouter
+export default paymentRouter
+
+// new file added
