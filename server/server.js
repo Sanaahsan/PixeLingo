@@ -1,4 +1,4 @@
-import express from 'express'
+import express from 'express'More actions
 import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/mongodb.js'
@@ -17,3 +17,6 @@ app.use('/api/image', ImageRouter)
 app.get('/', (req, res)=> res.send("API Working fine"))
 
 app.listen(PORT, ()=> console.log('Server running on port ' + PORT));
+app.listen(PORT, ()=> console.log('Server running on port ' + PORT));
+
+// this is a test commit 
