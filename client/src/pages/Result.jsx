@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { motion } from 'motion/react'
@@ -11,6 +12,7 @@ const Result = () => {
    const [loading, setLoading]=useState(false)
    const [input, setInput]=useState('')
 
+   // method to generate images --> from appcontext 
    const {generateImage} = useContext(AppContext)
 
    const onSubmitHandler = async(e)=>{
@@ -25,7 +27,6 @@ const Result = () => {
       }
     }
     setLoading(false)
-
    }
 
   return (
@@ -43,7 +44,7 @@ const Result = () => {
           ${loading?'w-full transition-all duration-[10s]':'w-0'}`}>
           </span>
       </div>
-      <p className={!loading ? 'hidden' : ''}> Loading.....</p>
+      <p className={!loading ? 'hidden' : ''}>Generating image....</p>
     </div>
 
 {!isImageLoaded && 
@@ -52,7 +53,7 @@ const Result = () => {
       <input 
       onChange={e=>setInput(e.target.value)} value={input}
       type='text' placeholder='Describe what you want to generate' className='flex-1 bg-transparent outline-none ml-8 max-sm:w-20 placeholder-color'/>
-      <button type='submit' className='bg-zinc-900 px-10 sm:px-16 py-3 rounded-full'>Generate</button>
+      <button type='submit' className='bg-zinc-900 px-10 sm:px-16 py-3 rounded-full' style={{"cursor": "pointer"}}>Generate</button>
     </div>
 }
 {isImageLoaded &&
