@@ -1,3 +1,4 @@
+
  A Full-Stack AI-Powered Text-to-Image SaaS Application* 🖼️💻
 
  PixelLingo, a modern, production-ready SaaS platform is built using the *MERN stack*, designed to convert user prompts into high-quality AI-generated images. This project combines strong backend architecture, a sleek frontend UI, secure payments, and seamless user experience.
