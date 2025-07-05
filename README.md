@@ -1,1 +1,1 @@
-https://pixelingo-dev.onrender.com
+https://pixelingo-dev.onrender.com/
